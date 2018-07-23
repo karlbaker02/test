@@ -95,7 +95,7 @@ private
       SUCCESS => response.is_registration ? confirmation_path : response_processing_path,
       CANCEL => response.is_registration ? failed_registration_path : start_path,
       FAILED_UPLIFT => failed_uplift_path,
-      FAILED => response.is_registration ? failed_registration_path : failed_sign_in_path
+      FAILED => response.is_registration ? failed_registration_path : failed_country_sign_in_path
     }.fetch(status)
   end
 end
