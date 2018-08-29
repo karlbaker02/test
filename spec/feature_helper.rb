@@ -5,6 +5,10 @@ require 'rack_session_access/capybara'
 require 'support/cookie_matchers'
 WebMock.disable_net_connect!(allow_localhost: true)
 
+if ENV["BUILD_NUMBER"] #on Jenkins
+  Capybara.set_version("2.38")
+end
+
 RACK_COOKIE_DATE_FORMAT = "%a, %d %b %Y".freeze
 
 RSpec.configure do |config|
