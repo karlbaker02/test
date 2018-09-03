@@ -40,7 +40,7 @@ Rails.application.config.after_initialize do
   rps_name_only = RP_CONFIG['transaction_type']['display_name_only'] || []
   REDIRECT_TO_RP_LIST = RP_CONFIG['redirect_to_rp'] || []
   SINGLE_IDP_ENABLED_RP_LIST = RP_CONFIG['single_idp_enabled'] || []
-  DATA_CORRELATOR = Display::Rp::DisplayDataCorrelator.new(RP_DISPLAY_REPOSITORY, rps_name_and_homepage.clone, rps_name_only.clone)
+  DATA_CORRELATOR = Display::Rp::DisplayDataCorrelator.new
   TRANSACTION_TAXON_CORRELATOR = Display::Rp::TransactionTaxonCorrelator.new
 
   TransactionList.rps_with_homepage = rps_name_and_homepage
